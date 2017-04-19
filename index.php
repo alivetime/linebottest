@@ -7,7 +7,7 @@ $json_string = file_get_contents('php://input');
 $file = fopen("C:\\Line_log.txt", "a+");
 fwrite($file, $json_string."\n"); 
 $json_obj = json_decode($json_string);
-
+echo $json_string;
 $event = $json_obj->{"events"}[0];
 $type  = $event->{"message"}->{"type"};
 $message = $event->{"message"};
